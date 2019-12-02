@@ -18,18 +18,18 @@ Estes exercícios envolvem a alteração do código dado em aula. Uma suite de t
 
 ## Exercícios
 
-  1. Escreva uma função `paraArvore` que receba uma lista ordenada de elementos, sem duplicação, e que devolva uma árvore rubro-negra bem formada. Sua função deve rodar em tempo O(n).
+  1. Escreva uma função `paraArvore` que receba uma lista ordenada de elementos, sem duplicação, e que devolva uma árvore rubro-negra bem formada. Sua função deve rodar em tempo O(n). Para isto altere o arquivo `src/RedBlackTree.hs`. Caso deseje, tente implementar a versão type-safe alterando o arquivo `src/TypeSabeRBTree.hs`. Note, contudo, que a versão type-safe vai exigir um pouquinho mais de ginástica.
 
-  2. A função `balance` tal como está faz diversos testes desnecessários. Por exemplo, quando a função `insert` faz a chamada recursiva no filho esquerdo, não é necessário que sejam feitas verificações de quebras da regra 2 (nenhum nó vermelho tem filhos vermelhos) no filho direito.
+  2. A função `balance` (`/src/RedBlackTree`) tal como está faz diversos testes desnecessários. Por exemplo, quando a função `insert` faz a chamada recursiva no filho esquerdo, não é necessário que sejam feitas verificações de quebras da regra 2 (nenhum nó vermelho tem filhos vermelhos) no filho direito.
 
-     a) Quebre a função `balance` em duas funções `lbalance` e `rbalance` que testem por violações envolvendo os filhos esquerdo e direito respectivamente. Substitua as chamadas à `balance` pelas novas funções.
+     a) Altere o arquivo `/src/RedBlackTree` e quebre a função `balance` em duas funções `lbalance` e `rbalance` que testem por violações envolvendo os filhos esquerdo e direito respectivamente. Substitua as chamadas à `balance` pelas novas funções.
 
      b) Estendendo um pouco mais a lógica adotada no item a, um dos testes nos netos de um nó também é desnecessário. Modifique a função `insert` para que ela nunca teste a cor de nós no caminho da busca.
 
   3. Altere a implementação da função `insert` para heaps esquerdistas `src/Heaps.hs` para que ela insira o elemento diretamente no Heap, sem o auxílio da função `merge`.
 
-  4. Qual a complexidade da execução da função `fromList` no caso de heaps esquerdistas? E para heaps binomiais?
+  4. Qual a complexidade da execução da função `fromList` no caso de heaps esquerdistas? E para heaps binomiais? Responda como um comentário sobre a função em questão.
 
-  5. Uma das vantagens da atual implementação dos heaps esquerdistas em comparação aos heaps binomiais é o fato de que `head` leva tempo O(1) em vez do tempo O(lg n) alcaçado por heaps binomiais. Altere a implementação dos heaps binimiais para que:
+  5. Uma das vantagens da atual implementação dos heaps esquerdistas em comparação aos heaps binomiais é o fato de que `head` leva tempo O(1) em vez do tempo O(lg n) alcaçado por heaps binomiais. Altere a implementação dos heaps binimiais (`src/Heaps.hs`) para que:
     - `head` leve O(1)
     - `tail`, `insert` e `merge` executem em O(lg n)
